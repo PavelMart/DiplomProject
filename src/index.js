@@ -9,7 +9,7 @@ import validation from './modules/validation';
 
 accordeon();
 carousel();
-modal();
+modal('.modal-overlay', '.modal-callback');
 scrollToSection();
 scrollToUp();
 sendForm();
