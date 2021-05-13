@@ -51,6 +51,11 @@ const modal = (modalOver, modalCall) => {
             return;
         }
 
+        if (target.href && target.href.match(/#\w+/)[0] === '#feedback') {
+            openModal(modalOverlay, modalCallback);
+            return;
+        }
+
         if (target.closest('.modal-close')) {
             closeModal(modalOverlay, modalCallback);
             return;
