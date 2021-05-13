@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modal = function modal() {\n  console.log('modal');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack://diplomProject/./src/modules/modal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modal = function modal() {\n  var modalOverlay = document.querySelector('.modal-overlay'),\n      modalCallback = document.querySelector('.modal-callback');\n\n  var toggleActive = function toggleActive(modal) {\n    modal.classList.toggle('active');\n  };\n\n  document.addEventListener('click', function (e) {\n    e.preventDefault();\n    var target = e.target;\n\n    if (target.closest('.callback-btn')) {\n      toggleActive(modalOverlay);\n      toggleActive(modalCallback);\n      return;\n    }\n\n    if (target.closest('.modal-close')) {\n      toggleActive(modalOverlay);\n      toggleActive(modalCallback);\n      return;\n    }\n\n    if (modalCallback.classList.contains('active') && !target.closest('.modal-callback')) {\n      toggleActive(modalOverlay);\n      toggleActive(modalCallback);\n      return;\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack://diplomProject/./src/modules/modal.js?");
 
 /***/ }),
 
@@ -528,7 +528,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("8f70a63abdfc05a6ed91")
+/******/ 		__webpack_require__.h = () => ("1608e5d986590e2e1f4a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

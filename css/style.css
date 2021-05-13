@@ -293,6 +293,9 @@ a.absolute {
 	padding: 55px 25px 35px;
 	z-index: 99;
 }
+.modal-callback.active, .modal-overlay.active {
+	display: block;
+}
 #responseMessage .modal-content.error {
 	color: #2fab6d;
 }
