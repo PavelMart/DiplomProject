@@ -848,20 +848,38 @@ hr.white {
 	bottom: 25px;
 }
 .top-slider .slick-dots li {
+	z-index: 99;
+	cursor: pointer;
 	border-color: #fff !important;
+}
+.top-slider .slick-dots li:hover {
+	background-color: #fff !important;
+	opacity: 0.7;
 }
 .top-slider .slick-dots li.slick-active {
 	background-color: #fff !important;
 }
 .top-slider {
+	position: relative;
 	overflow: hidden;
 	height: 450px;
 }
 .top-slider .item {
+	width: 100%;
 	overflow: hidden;
 	height: 450px;
-	position: relative;
+	position: absolute;
+	opacity: 0;
+	-webkit-transition: opacity .5s;
+    transition: opacity .5s
 }
+
+.top-slider .item.active {
+	opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s
+}
+
 .top-slider .item:before {
 	content: "";
 	display: block;
@@ -948,7 +966,7 @@ video#video_background {
 		transition: 0.5s;
 	}
 	.top-slider .table.active {
-		webkit-transform: scale(1);
+		-webkit-transform: scale(1);
 		-ms-transform: scale(1);
 		-o-transform: scale(1);
 		transform: scale(1);
@@ -1217,6 +1235,7 @@ video#video_background {
 }
 
 .up {
+	display: none;
 	position: fixed;
 	bottom: 50px;
 	right: 50px;
