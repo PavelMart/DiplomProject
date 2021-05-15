@@ -1,6 +1,7 @@
 const modal = (modalOver, modalCall) => {
     const modalOverlay = document.querySelector(modalOver),
-        modalCallback = document.querySelector(modalCall);
+        modalCallback = document.querySelector(modalCall),
+        buttonUp = document.querySelector('.up');
 
     const toggleActive = (modal) => {
         modal.classList.toggle('active');
@@ -52,6 +53,11 @@ const modal = (modalOver, modalCall) => {
         }
 
         if (target.href && target.href.match(/#\w+/)[0] === '#feedback') {
+            openModal(modalOverlay, modalCallback);
+            return;
+        }
+
+        if (target.href && target.href.match(/#\w+/)[0] === '#application') {
             openModal(modalOverlay, modalCallback);
             return;
         }
