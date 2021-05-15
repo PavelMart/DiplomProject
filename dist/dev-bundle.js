@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeon = function accordeon() {\n  console.log('accordeon');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://diplomProject/./src/modules/accordeon.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeon = function accordeon() {\n  var accordeonSection = document.querySelector('.accordeon-section'),\n      accordeonElements = accordeonSection.querySelectorAll('.element');\n\n  var addActive = function addActive(elem) {\n    elem.classList.add('active');\n  };\n\n  var removeActive = function removeActive(elem) {\n    elem.classList.remove('active');\n  };\n\n  document.addEventListener('click', function (e) {\n    var target = e.target;\n\n    if (target.closest('.accordeon-section .element')) {\n      var element = target.closest('.accordeon-section .element'),\n          elementContent = element.querySelector('.element-content');\n\n      if (element.classList.contains('active')) {\n        removeActive(element);\n        removeActive(elementContent);\n        return;\n      }\n\n      accordeonElements.forEach(function (item) {\n        var itemContent = item.querySelector('.element-content');\n\n        if (element === item) {\n          addActive(item);\n          addActive(itemContent);\n        } else {\n          removeActive(item);\n          removeActive(itemContent);\n        }\n      });\n    } else {\n      accordeonElements.forEach(function (item) {\n        var itemContent = item.querySelector('.element-content');\n        removeActive(item);\n        removeActive(itemContent);\n      });\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://diplomProject/./src/modules/accordeon.js?");
 
 /***/ }),
 
@@ -517,7 +517,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b378a449cb23abab8a5a")
+/******/ 		__webpack_require__.h = () => ("c1c00e046bcf02e4056a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
