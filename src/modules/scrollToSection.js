@@ -33,7 +33,7 @@ const scrollToSection = () => {
         const scrolling = setInterval(() => {
             
             
-            if (document.documentElement.scrollTop < (endPosition - 50)) {
+            if (document.documentElement.scrollTop < (endPosition)) {
 
                 scrollBy(0, 20);
                 
