@@ -13,7 +13,9 @@ const accordeon = () => {
     document.addEventListener('click', e => {
         const target = e.target;
 
-        if (target.closest('.accordeon-section .element')) {
+        if (target.closest('.accordeon-section .element-content')) {
+            return;
+        } else if (target.closest('.accordeon-section .element')) {
             const element = target.closest('.accordeon-section .element'),
                 elementContent = element.querySelector('.element-content');
 

@@ -5,8 +5,18 @@ const carousel = () => {
         cards = [...document.querySelectorAll('.card')];
     
     const renderCards = () => {
+        let numberElements = 3;
+
+        if (document.documentElement.offsetWidth < 992) {
+            numberElements = 2;
+        } 
+
+        if (document.documentElement.offsetWidth < 768) {
+            numberElements = 1;
+        } 
+
         cards.forEach( (card, i) => {
-            if (i < 3) {
+            if (i < numberElements) {
                 card.style.display = 'block';
             } else {
                 card.style.display = 'none';
@@ -47,7 +57,9 @@ const carousel = () => {
         }
     });
 
-
+    window.addEventListener('resize', () => {
+        renderCards();
+    });
 };
 
 export default carousel;

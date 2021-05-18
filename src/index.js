@@ -5,6 +5,7 @@ import scrollToSection from './modules/scrollToSection';
 import sendForm from './modules/sendForm';
 import slider from './modules/slider';
 import validation from './modules/validation';
+import burgerMenu from './modules/burgerMenu';
 
 accordeon();
 carousel();
@@ -13,3 +14,4 @@ scrollToSection();
 sendForm();
 slider();
 validation();
+burgerMenu();

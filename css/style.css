@@ -410,6 +410,7 @@ a.absolute {
 }
 .mob-menu-btn {
 	margin: 24px 5px 0 20px;
+	cursor: pointer;
 }
 .mob-menu-btn span {
 	display: block;
@@ -463,12 +464,19 @@ a.absolute {
 	text-transform: uppercase;
 	font-family: "Helios";
 }
+.mobile-menu > ul > li:hover > a {
+	color: #2fab6d;
+}
 .mobile-menu > ul > li.active > a {
 	color: #2fab6d;
 }
 .mobile-menu-close.close {
+	cursor: pointer;
 	top: 25px;
 	right: 25px;
+}
+.mobile-menu-close.close:hover {
+	transform: scale(1.1);
 }
 .callback-btn {
 	padding: 0 30px;

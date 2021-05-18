@@ -1,5 +1,6 @@
 const scrollToSection = () => {
     const topMenuList = document.querySelector('.top-menu-list'),
+        mobileMenu = document.querySelector('.mobile-menu'),
         buttonUp = document.querySelector('.up'),
         servicesSection = document.querySelector('.services-section');
 
@@ -58,26 +59,29 @@ const scrollToSection = () => {
         scrollToUp(50);
     });
 
-    topMenuList.addEventListener('click', e => {
+    const scroll = e => {
+        e.preventDefault();
         const target = e.target;
-
+    
         if (target.closest('a')) {
             const href = target.href;
-
+    
             const section = findSection(href);
             const sectionPosition = section.offsetTop;
-
+    
             const currentPosition = document.documentElement.scrollTop;
-
+    
             if (currentPosition < sectionPosition) {
                 scrollToDown(sectionPosition);
             } else {
                 scrollToUp(sectionPosition);
             }            
-
+    
         }
+    };
 
-    });
+    topMenuList.addEventListener('click', scroll);
+    mobileMenu.addEventListener('click', scroll);
 
 };
 
